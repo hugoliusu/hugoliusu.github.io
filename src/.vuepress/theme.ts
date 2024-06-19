@@ -87,6 +87,26 @@ export default hopeTheme({
   },
 
   plugins: {
+    shiki: {
+      lineNumbers: 1,
+      notationDiff: true,
+      notationFocus: true,
+      highlightLines: true,
+      notationHighlight: true,
+      langs: ['sql', 'python', 'java', 'javascript', 'c', 'c#', 'c++', 'html', 'css',
+        'bash', 'rust', 'php', 'r', 'cmd', 'yaml', 'markdown', 'http', 'cmake', 'matlab',
+        'plsql', 'ini', "fortran-fixed-form", 'go', 'vue', 'tex', 'text', 'csv', 'fish',
+        'makefile'
+      ],
+    theme: "monokai",
+    langAlias: {
+      "pygame": "python",
+    }
+      // themes: {
+      //   light: "github-light",
+      //   dark: "one-dark-pro",
+      // },
+    },
     blog: true,
 
     // If you don’t need comment feature, you can remove following option
