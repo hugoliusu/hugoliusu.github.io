@@ -1,7 +1,7 @@
 ---
 title: 05-list NoteBook
 icon: python
-date: 2024-5-29 19:17:06
+date: 2024-7-17 20:07:53
 author: 刘奕彤
 isOriginal: true
 category: 
@@ -132,10 +132,43 @@ print(numbers[1:1])  # 因為[1:1]前面的1可以到5,但是後面不可以把�
 ```python
 numbers = [1, 5]
 
-numbers[1:1] = [2, 3, 4] # 因為[1:1]前面的1可以到5,但是後面不可以把数量是5,但[1:1]是[2, 3, 4],So 是[1, ]
+numbers[1:1] = [2, 3, 4] # 因為[1:1]前面的1可以到5,但是後面不可以把数量是5,但[1:1]是[2, 3, 4],So 是[1, 2, 3, 4, 5]
 print(numbers)
 
 # ---output---
 [1, 2, 3, 4, 5]
+```
+
+```python
+numbers = [1, 2, 3, 5, 6]
+position = int(input('Enter position: '))
+value = int(input('Enter value: '))
+numbers[position:position] = [value]
+print(numbers)
+
+# ---output---
+# Enter position: 3
+# Enter value: 4
+# [1, 2, 3, 4, 5, 6]
+```
+
+# 5. 在列表的特定位置插入元素「.insert(index, element)」
+
+.insert(index, element) 是一個列表的基本方法，用于在列表的指定位置插入個元素
+
+它的基本語法是：
+
+```python
+list,insert(index, element)
+```
+
+index : 指定要插入元素的位置。索引從 0 開始。如果指定的索引超出了列表的當前長度「不會報錯」，則元素將被加到表的末尾。
+
+element : 這是你想要插入列表的元素
+
+```python
+numbers = [1, 2, 3, 5, 6]
+numbers.insert(3, 4)
+print(numbers) # [1, 2, 3, 4, 5, 6]
 ```
 
