@@ -172,5 +172,165 @@ numbers.insert(3, 4)
 print(numbers) # [1, 2, 3, 4, 5, 6]
 ```
 
+# 7. 修改列表中的元素
 
+1.单个元素修改
 
+```python
+name = ['lilei','hanmeimei']
+print('before:',name)
+
+name[0] = 'madongmei'
+print('after:', name)
+
+# ---output---
+before: ['lilei', 'hanmeimei']
+after: ['madongmei', 'hanmeimei']
+
+```
+
+```python
+let = ['a', 'b', 'c', 'hugoliu']
+print('before:',let)
+
+let[3] = '安琪拉'
+print('after:', let)
+
+# ---output---
+before: ['a', 'b', 'c', 'hugoliu']
+after: ['a', 'b', 'c', '安琪拉']
+```
+
+```python
+numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+print('before:', numbers)
+
+numbers[1:5] = ['one', 'two', 'three', 'four']
+print('after:', numbers)
+
+# ---output---
+before: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+after: [0, 'one', 'two', 'three', 'four', 5, 6, 7, 8, 9, 10]
+```
+
+4.多个元素修改
+
+```
+let = ['a', 'b', 'c', 'hugoliu']
+print('before:',let)
+
+let[1:3] = ['h', 'i']
+print('after:', let)
+
+# ---output---
+before: ['a', 'b', 'c', 'hugoliu']
+after: ['a', 'h', 'i', 'hugoliu']
+```
+
+5.元素数量不一样
+
+```python
+numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+print('before:', numbers)
+
+numbers[1:5] = ['one', 'two']
+print('after:', numbers)
+
+# ---output---
+before: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+after: [0, 'one', 'two', 5, 6, 7, 8, 9, 10]
+```
+
+6.元素数量不一样 & 字符串自动拆开成列表
+
+```python
+numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+print('before:', numbers)
+
+numbers[1:5] = 'bornforthis'
+print('after:', numbers)
+
+#---output---
+before: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+after: [0, 'b', 'o', 'r', 'n', 'f', 'o', 'r', 't', 'h', 'i', 's', 5, 6, 7, 8, 9, 10]
+```
+
+·多个元素修改情况下，可以使用的对象：
+
+。列表
+
+。元组
+
+。集合「不按集合原本的顺序」
+
+。字符串
+
+。字典「放进去的是key」
+
+```python
+numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+print('before:', numbers)
+
+numbers[1:5] = {'a':1, 'b':8}
+print('after:', numbers)
+
+# ---output---
+before: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+after: [0, 'a', 'b', 5, 6, 7, 8, 9, 10]
+```
+
+·多个元素改情况下，不可以的对象：
+
+。布尔型
+
+```python
+numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+print('before:', numbers)
+
+numbers[1:5] = true
+print('after:', numbers)
+
+# ---output---
+Traceback (most recent call last):
+ File "C:\Users\TUNG\PycharmProjects\Coder\Day\e.g.py", line 4, in <module>
+    numbers[1:5] = True
+TypeError: can only assign an iterable
+before: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+```
+
+# 8.向列表添加元素
+
+## 8.1.添加单个元素「.append()」
+
+```python
+let = ['钥匙', '毒药']
+print('before:', let)
+let.append('解药')
+print('after:', let)
+
+# ---output---
+before: ['钥匙', '毒药']
+after: ['钥匙', '毒药', '解药']
+```
+
+## 8.2.添加多个元素「.extend()」
+
+```python
+inventory = ['钥匙', '毒药', '解药']
+inventory.extend(['迷药', '感冒药'])
+print(inventory)
+
+# ---output---
+['钥匙', '毒药', '解药', '迷药', '感冒药']
+```
+
+```
+lst = ['钥匙', '毒药']
+user_input = input('Enter something you like ヾ(≧▽≦*)o :>>> ')
+lst.append(user_input)
+print(lst)
+
+# ---output---
+Enter something you like ヾ(≧▽≦*)o :>>> 解藥
+['钥匙', '毒药', '解藥']
+```
