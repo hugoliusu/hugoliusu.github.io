@@ -334,3 +334,141 @@ print(lst)
 Enter something you like ヾ(≧▽≦*)o :>>> 解藥
 ['钥匙', '毒药', '解藥']
 ```
+
+## 9.1 del
+
+del 需要指定列表中要删除的单个元素或多个元素，如果不指定元素，则刪除整个变量
+
+```python
+student_list = ['李雷', '韩梅梅', '马冬梅']
+del student_list[0]
+print(student_list)
+
+# ---output---
+['韩梅梅', '马冬梅']
+```
+
+如果不指定删除的元素素，则删除整个变量
+
+```python
+student_list = ['李雷', '韩梅梅', '马冬梅']
+del student_list
+print(student_list)
+
+# ---output---
+Traceback (most recent call last):
+  File "C:\Users\TUNG\PycharmProjects\Coder\Day\20240814.py", line 3, in <module>
+    print(student_list)
+NameError: name 'student_list' is not defined
+```
+
+## 9.2 pop()
+
+pop() 函数默认删除列表中的最后一个元素，也可以传参数指定要删除元素的下标
+
+```python
+student_list = ['李雷', '韩梅梅', '马冬梅']
+student_list.pop()    # 默认删除最后一个
+print(student_list)
+
+student_list.pop(0)    # 删除 student_list 的0号位
+print(student_list)
+
+# ---output---
+['李雷', '韩梅梅']
+['韩梅梅']
+```
+
+## 9.3 remove()
+
+remove() 指定删除列表中某个元素，例如：remove(‘aiyc’) 则指定册除列表中的 ‘aiyc’ 元素。
+
+```python
+student_list = ['李雷', '韩梅梅', '马冬梅']
+student_list.remove('韩梅梅')
+print(student_list)
+
+# ---output---
+['李雷', '马冬梅']
+```
+
+# 10. 两个列表相加~
+
+直接使用加号加就可以ヾ(≧▽≦*)o
+
+```python
+numbers1 = [0, 1, 2, 3, 4]
+numbers2 = [5, 6, 7, 8, 9]
+print(numbers1 + numbers2)
+
+# ---output---
+[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+```
+
+# 11. 判断某个元素是否存在于列表中「Value in Sequence」
+
+```python
+inventory = ['钥匙', '毒药', '解药']
+print('解药' in inventory)
+print('迷药' in inventory)
+
+# ---output---
+True
+False
+```
+
+# 12. 获取列表中某个元素重复的次数「.count()
+
+```python
+numbers = [0, 1, 1, 2, 3, 4, 1]
+print(numbers.count(1))
+
+# ---output---
+3
+```
+
+# 13. 获取列表中某个元素第一次出现的位置「.index」
+
+·用 列表.index（元素）来获取，如果元素不存在则会报错。
+
+```python
+numbers = [0, 1, 1, 2, 3, 4, 1]
+print(numbers.index(1)) # 1
+
+# ---output---
+1
+```
+
+# 14. 列表排序
+
+使列素内的元素从小大排列，直接修改本身。如果里面指定 reverse=True 则列表降序排列。
+
+```python
+numbers = [2, 1, 4, 3, 7, 6, 5, 0, 9, 8]
+numbers.sort()
+print(numbers) # [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+numbers = [2, 1, 4, 3, 7, 6, 5, 0, 9, 8]
+numbers.sort(reverse=True)
+print(numbers)  # [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+# ---output---
+[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+```
+
+## 14.2 sorted(list,revese=False)
+
+sorted(list,revese=False) 将列表进行小到大排序，排序后列表不变，返回新列表。reverse默认false，如果设置为true则返回降序排序。
+
+```python
+lst = [9, 8, 10, 7, 6, 5, 4, 2, 1, 0]
+new_let = sorted(lst)
+print(new_let)
+
+# ---output---
+[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+```
+
+
+
