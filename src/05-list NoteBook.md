@@ -470,5 +470,27 @@ print(new_let)
 [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 ```
 
+## 14.3 练习
+
+题目:
+
+将一串字符串 '132569874' 转换成列表并将其输出；
+对其中偶数下标的元素进行降序排列，奇数下标的元素不变。
+
+答案:
+
+```python
+str_to_list = list('132569874') # 字符串转换成列表
+print(str_to_list)
+even_position = str_to_list[::2] # 提取偶数下标的数据
+even_position.sort(reverse=True) # 偶数下标的降序排列
+str_to_list[::2] = even_position # 把排序好的数据放回去/切片复制
+print(str_to_list) # 只是print
+
+# ---output---
+['1', '3', '2', '5', '6', '9', '8', '7', '4']
+['8', '3', '6', '5', '4', '9', '2', '7', '1']
+```
+
 
 
