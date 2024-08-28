@@ -492,5 +492,53 @@ print(str_to_list) # 只是print
 ['8', '3', '6', '5', '4', '9', '2', '7', '1']
 ```
 
+转换成列表
 
+对其中奇数下标的元素进行升序排列
 
+```python
+lst = list('liuyichen')
+odd_num = lst[1::2]
+# print(odd_num)
+odd_num.sort()
+lst[1::2] = odd_num
+print(lst)
+
+# ---output---
+['l', 'c', 'u', 'e', 'i', 'i', 'h', 'y', 'n']
+```
+
+# 15.reverse()
+
+反转列表中的元素。
+
+```python
+lst = ['毒药', '解药', '感冒药']
+lst.reverse()
+print(lst)
+
+# ---output---
+['感冒药', '解药', '毒药']
+```
+
+# 16.列表的深浅拷贝
+
+## 16.1.所存在的问题
+
+```python
+x = ['毒药', '解药', '感冒药']
+y = x
+print(f'Original:\n\tx: {x}\n\ty: {y}\n\tid_x: {id(x)}\tid_y:{id(y)}')
+y[0] = '消炎药'
+print(f'After:\n\tx: {x}\n\ty: {y}\n\tid_x: {id(x)}\tid_y:{id(y)}')
+
+# ---output---
+Original:
+	x: ['毒药', '解药', '感冒药']
+	y: ['毒药', '解药', '感冒药']
+	id_x: 1741162722048	id_y:1741162722048
+After:
+	x: ['消炎药', '解药', '感冒药']
+	y: ['消炎药', '解药', '感冒药']
+	id_x: 1741162722048	id_y:1741162722048
+```

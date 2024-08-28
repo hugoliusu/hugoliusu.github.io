@@ -264,7 +264,14 @@ await = "aiyc"
 print(await)  # await 在 Python当中有特殊功能，比如 while
 ```
 
+```python
+lst = ['毒药', '解药', '感冒药']
+str = lst[::-1]
+print(str)
 
+# ---output---
+['感冒药', '解药', '毒药']
+```
 
 
 
