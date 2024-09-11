@@ -105,3 +105,80 @@ print(select
 # ---output---
 19
 ```
+
+# 6. 元组的拼接
+
+直接使用加号拼接
+
+```python
+tug1 = (1, 2, 3)
+tug2 = (4, 5, 6)
+new_tup = tug1 + tug2
+print(new_tup)   # (1, 2, 3, 4, 5, 6)
+
+# ---output---
+(1, 2, 3, 4, 5, 6)
+```
+
+# 7.元组的排序
+
+## 7.1 小试牛刀「利用现有的知识排序］
+
+```python
+tup = (9, 7, 5, 3, 1, 2, 4, 6, 8, 0)
+tup1 = list(tup)
+tup1.sort()
+tup = tuple(tup1)
+print(tup)
+
+# ---output---
+(0, 1, 2, 3, 4, 5, 6, 7, 8, 9)
+```
+
+## 7.2 使用 sorted()
+
+实际上的 sorted 实现的也就是上面的流程
+
+```
+tup = (9, 7, 5, 3, 1, 2, 4, 6, 8, 0)
+lst = sorted(tup)
+print(lst)
+tup = tuple(lst)
+print(tup)
+
+# ---output---
+[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+(0, 1, 2, 3, 4, 5, 6, 7, 8, 9)
+```
+
+# 8. zip()
+
+zip() 是一個内置函数，用于将多个可造代对象（如列表、元组或字符串）的相應元素配對并返回一個組選代器。如果你的兩個或更多列表，并且想要它們的相應元素分建一個新迭化器那麽 zip() 函數就非常有用
+
+```python
+list1 = [1, 2, 3]
+list2 = ['a', 'b', 'c']
+```
+
+可以使用來配對這些列素的元素
+
+```python
+zipped = zip(list1, list2)
+```
+
+zipped 現在是一個包含元組的迭代器，每個元組都由兩個列表的相應元素成，例如：
+
+```python
+list1 = [1, 2, 3]
+list2 = ['a', 'b', 'c']
+zipped = zip(list1, list2)
+print(zipped)
+print(list(zipped))
+
+# ---output---
+<zip object at 0x00000295EE186400>
+[(1, 'a'), (2, 'b'), (3, 'c')]
+```
+
+
+
