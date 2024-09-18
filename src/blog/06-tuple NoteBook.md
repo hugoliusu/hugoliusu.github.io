@@ -139,7 +139,7 @@ print(tup)
 
 实际上的 sorted 实现的也就是上面的流程
 
-```
+```python
 tup = (9, 7, 5, 3, 1, 2, 4, 6, 8, 0)
 lst = sorted(tup)
 print(lst)
